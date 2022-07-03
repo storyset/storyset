@@ -59,7 +59,7 @@ typings/
 
 # temporary files & directories
 ._*
-.temp/
+.temp
 
 # release-related directories
 .build
