@@ -1,17 +1,19 @@
 {
-  "extends": "ts-node/node16/tsconfig.json",
+  "extends": "@tsconfig/create-react-app/tsconfig.json",
 
   "ts-node": {
     "require": ["tsconfig-paths/register"],
     "files": true,
 
     "compilerOptions": {
-      "lib": ["es2021"],
+      "target": "es2020",
+      "lib": ["es2020"],
+
       "module": "commonjs",
-      "target": "es2021",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
 
       "strict": true,
-      "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true
     }
@@ -20,28 +22,38 @@
   "compilerOptions": {
     "sourceMap": true,
     "declaration": true,
+    "noEmit": false,
 
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
 
-    "rootDir": ".",
-    "baseUrl": ".",
+    "outDir": ".dist",
+
+    "baseUrl": "src",
 
     "paths": {
-      "@storyset":   ["src/"],
-      "@storyset/*": ["src/*"],
+      "@storyset":   ["."],
+      "@storyset/*": ["./*"],
 
-      "@Props":      ["src/Props/"],
-      "@Props/*":    ["src/Props/*"],
+      "@Props":      ["Props/"],
+      "@Props/*":    ["Props/*"],
 
-      "@Theme":      ["src/Theme/"],
-      "@Theme/*":    ["src/Theme/*"],
+      "@Theme":      ["Theme/"],
+      "@Theme/*":    ["Theme/*"],
 
-      "@Types":      ["src/Types/"],
-      "@Types/*":    ["src/Types/*"],
+      "@Types":      ["Types/"],
+      "@Types/*":    ["Types/*"],
 
-      "@Utils":      ["src/Utils/"],
-      "@Utils/*":    ["src/Utils/*"]
+      "@Utils":      ["Utils/"],
+      "@Utils/*":    ["Utils/*"]
     }
-  }
+  },
+
+  "include": [
+    "src/**/*.ts*"
+  ],
+
+  "exclude": [
+    "node_modules"
+  ]
 }
