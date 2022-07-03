@@ -9,8 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        # version: [14, 16, 18]
-        version: [16]
+        version: [14, 16, 18]
 
     steps:
     - uses: actions/checkout@v3
