@@ -13,6 +13,9 @@
     "url": "https://github.com/storyset/storyset/issues"
   },
   "homepage": "https://github.com/storyset/storyset#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=14"
   },
