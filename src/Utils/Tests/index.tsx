@@ -1,11 +1,15 @@
 /** @jsxImportSource @emotion/react */
 
+// -----------------------------------------------------------------------------
+
 import {
   type ReactNode,
   Fragment,
   Children,
   isValidElement,
 } from 'react'
+
+// -----------------------------------------------------------------------------
 
 const style = {
   display: 'flex',
