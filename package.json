@@ -1,0 +1,69 @@
+{
+  "name": "@storyset/storyset",
+  "description": "Useful tools for Storybook.",
+  "version": "0.0.0-development",
+  "author": "Richard King <richrdkng@gmail.com> (https://www.richrdkng.com/)",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storyset/storyset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/storyset/storyset/issues"
+  },
+  "homepage": "https://github.com/storyset/storyset#readme",
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "story",
+    "stories",
+    "storyset",
+    "util",
+    "utils",
+    "tool",
+    "tools",
+    "storybook"
+  ],
+  "scripts": {
+    "start": "start-storybook -p 6006 --ci",
+    "test": "jest",
+    "prep": "echo \"PREP\"",
+    "build": "echo \"BUILD\"",
+    "build:storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@emotion/react": "^11.9.3",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "@tsconfig/node16": "^1.0.3",
+    "@types/jest": "^28.1.4",
+    "@types/node": "^18.0.1",
+    "@types/react": "^18.0.14",
+    "babel-loader": "^8.2.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "semantic-release": "^19.0.3",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.2",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11",
+    "react": ">=17",
+    "react-dom": ">=17"
+  }
+}

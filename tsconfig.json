@@ -1,0 +1,47 @@
+{
+  "extends": "ts-node/node16/tsconfig.json",
+
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],
+    "files": true,
+
+    "compilerOptions": {
+      "lib": ["es2021"],
+      "module": "commonjs",
+      "target": "es2021",
+
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true
+    }
+  },
+
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": true,
+
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+
+    "rootDir": ".",
+    "baseUrl": ".",
+
+    "paths": {
+      "@storyset":   ["src/"],
+      "@storyset/*": ["src/*"],
+
+      "@Props":      ["src/Props/"],
+      "@Props/*":    ["src/Props/*"],
+
+      "@Theme":      ["src/Theme/"],
+      "@Theme/*":    ["src/Theme/*"],
+
+      "@Types":      ["src/Types/"],
+      "@Types/*":    ["src/Types/*"],
+
+      "@Utils":      ["src/Utils/"],
+      "@Utils/*":    ["src/Utils/*"]
+    }
+  }
+}
