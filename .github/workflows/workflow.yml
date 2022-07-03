@@ -28,9 +28,9 @@ jobs:
       id: npm-cache
       with:
         path: ${{ steps.npm-cache-dir.outputs.dir }}
-        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+        key: ${{ runner.os }}-node-${{ matrix.version }}-${{ hashFiles('package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-
+          ${{ runner.os }}-node-${{ matrix.version }}
 
     # --------------------------------------------------------------------------
 
@@ -65,9 +65,9 @@ jobs:
       id: npm-cache
       with:
         path: ${{ steps.npm-cache-dir.outputs.dir }}
-        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+        key: ${{ runner.os }}-node-16-${{ hashFiles('package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-
+          ${{ runner.os }}-node-16
 
     # --------------------------------------------------------------------------
 
