@@ -49,12 +49,10 @@
   },
 
   "include": [
-    "src/**/*.ts*"
+    "src"
   ],
 
   "exclude": [
-    "node_modules",
-    "src/**/*.test.ts*",
-    "src/**/*.stories.ts*"
+    "node_modules"
   ]
 }
