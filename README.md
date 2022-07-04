@@ -9,5 +9,5 @@ Useful tools for Storybook.
 <!--- References =========================================================== -->
 
 <!--- URLs -->
-[url-website]: https://www.richrdkng.hu
+[url-website]: https://www.richrdkng.com
 [url-license]: https://github.com/storyset/storyset/blob/master/LICENSE.md
