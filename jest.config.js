@@ -10,12 +10,14 @@ module.exports = {
 
   moduleDirectories: [
     'node_modules',
-    'packages',
   ],
 
   moduleNameMapper: {
     ...pathsToModuleNameMapper(
       compilerOptions.paths,
+      {
+        prefix: `<rootDir>/${compilerOptions.baseUrl}`,
+      }
     ),
   }
 }
