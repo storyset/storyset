@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/storyset/storyset/compare/v1.0.1...v1.1.0) (2023-06-29)
+
+
+### Features
+
+* initial release ([0b29481](https://github.com/storyset/storyset/commit/0b29481a1ccb05d5434c36f1d016e9f9ef3d47b3))
+
 ## [1.0.1](https://github.com/storyset/storyset/compare/v1.0.0...v1.0.1) (2022-07-03)
 
 
