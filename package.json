@@ -1,6 +1,6 @@
 {
   "name": "storyset",
-  "description": "Set of useful tools for Storybook.",
+  "description": "A set of useful tools for Storybook.",
   "version": "0.0.0-development",
   "author": "Richard King <richrdkng@gmail.com> (https://www.richrdkng.com/)",
   "license": "MIT",
