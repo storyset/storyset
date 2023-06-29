@@ -9,27 +9,27 @@ export default story(
   { ...showDocs() }
 )
 
-export const Default = () => (
+export const Default = (): JSX.Element => (
   <Group
     title='Group'
     debug
   >
-    <Component index={1}/>
-    <Component index={2}/>
-    <Component index={3}/>
+    <Component index={1} />
+    <Component index={2} />
+    <Component index={3} />
   </Group>
 )
 
-export const Direction = () => (
+export const Direction = (): JSX.Element => (
   <List>
     <Group
       title='Group'
       horizontal
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Group>
 
     <Group
@@ -37,14 +37,14 @@ export const Direction = () => (
       vertical
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Group>
   </List>
 )
 
-export const Spacing = () => (
+export const Spacing = (): JSX.Element => (
   <List>
     <Group
       title='Group'
@@ -52,9 +52,9 @@ export const Spacing = () => (
       spacing={{ between: '25px' }}
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Group>
 
     <Group
@@ -63,9 +63,9 @@ export const Spacing = () => (
       spacing={{ between: '25px' }}
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Group>
   </List>
 )

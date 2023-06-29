@@ -3,23 +3,23 @@
 import {
   type TAlign,
   type TDirection,
-  type TSpacing,
+  type TSpacing
 } from '../../Types'
 
-type TStory = {
+interface TStory {
   globalStyles: any
-  align:     TAlign
+  align: TAlign
   direction: TDirection
-  spacing:   TSpacing
+  spacing: TSpacing
 }
 
-type TGroup = {
-  align:     TAlign
+interface TGroup {
+  align: TAlign
   direction: TDirection
-  spacing:   TSpacing
+  spacing: TSpacing
 }
 
-type TDefaults = {
+interface TDefaults {
   Story: TStory
   Group: TGroup
 }
@@ -28,24 +28,24 @@ const _storysetDefaults: TDefaults = {
   Story: {
     globalStyles: null,
 
-    align:     'center',
+    align: 'center',
     direction: 'horizontal',
     spacing: {
-      between: '25px',
+      between: '25px'
     }
   },
   Group: {
-    align:     'center',
+    align: 'center',
     direction: 'horizontal',
     spacing: {
-      between: '25px',
+      between: '25px'
     }
   }
 }
 
 const _mergedDefaults: TDefaults = Object.assign({}, _storysetDefaults)
 
-export const getDefaults = () => {
+export const getDefaults = (): TDefaults => {
   return _mergedDefaults
 }
 
@@ -53,21 +53,21 @@ export const setDefaults = (
   defaults?: {
     Story?: {
       globalStyles?: any
-      align?:        TAlign
-      direction?:    TDirection
-      spacing?:      TSpacing
-    },
-    Group?: {
-      align?:     TAlign
+      align?: TAlign
       direction?: TDirection
-      spacing?:   TSpacing
+      spacing?: TSpacing
+    }
+    Group?: {
+      align?: TAlign
+      direction?: TDirection
+      spacing?: TSpacing
     }
   }
-) => {
+): TDefaults => {
   // Story ---------------------------------------------------------------------
 
-  if (defaults?.Story) {
-    if (defaults.Story.globalStyles) {
+  if ((defaults?.Story) != null) {
+    if ('globalStyles' in defaults.Story) {
       _mergedDefaults.Story.globalStyles = defaults.Story.globalStyles
     }
 
@@ -90,7 +90,7 @@ export const setDefaults = (
 
   // Group ---------------------------------------------------------------------
 
-  if (defaults?.Group) {
+  if ((defaults?.Group) != null) {
     if (typeof defaults.Group.align === 'string') {
       _mergedDefaults.Group.align = defaults.Group.align
     }

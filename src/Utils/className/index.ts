@@ -1,14 +1,16 @@
+// TODO: resolve eslint-disable-next-line
+
 const toString = Object.prototype.toString
 const hasOwnProperty = Object.hasOwnProperty
 
 // TODO: handle deep arrays and objects (e.g.: [['string-1', ['string-2']], 'string-3'])
 // TODO: handle deep functions
 
-const _parseArrayIntoClassList = (array: any[], classList: string[]) => {
+const _parseArrayIntoClassList = (array: any[], classList: string[]): void => {
   for (const entry of array) {
     if (typeof entry === 'string') {
       classList.push(entry)
-    } else if (entry && typeof entry === 'object' && entry.length > 0) {
+    } else if (typeof entry === 'object' && entry.length > 0) {
       _parseArrayIntoClassList(entry, classList)
     }
   }
@@ -47,8 +49,9 @@ export const className = (...classes: any[]): string | undefined => {
       _parseArrayIntoClassList(entry, classList)
 
     // handle plain objects ----------------------------------------------------
-    } else if (entry && typeof entry === 'object') {
+    } else if (typeof entry === 'object') {
       for (const key in entry) {
+        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
         if (hasOwnProperty.call(entry, key) && entry[key]) {
           classList.push(key)
         }

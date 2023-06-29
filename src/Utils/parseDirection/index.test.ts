@@ -11,7 +11,7 @@ describe('parseDirection', () => {
   })
 
   describe('direction prop', () => {
-    test(`direction: "horizontal"`, () => {
+    test('direction: "horizontal"', () => {
       const result = parseDirection({ direction: 'horizontal' })
 
       expect(result.hasDirection).toBe(true)
@@ -20,7 +20,7 @@ describe('parseDirection', () => {
       expect(result.isVertical).toBe(false)
     })
 
-    test(`direction: "vertical"`, () => {
+    test('direction: "vertical"', () => {
       const result = parseDirection({ direction: 'vertical' })
 
       expect(result.hasDirection).toBe(true)
@@ -31,7 +31,7 @@ describe('parseDirection', () => {
   })
 
   describe('directions as props', () => {
-    test(`horizontal: true`, () => {
+    test('horizontal: true', () => {
       const result = parseDirection({ horizontal: true })
 
       expect(result.hasDirection).toBe(true)
@@ -40,7 +40,7 @@ describe('parseDirection', () => {
       expect(result.isVertical).toBe(false)
     })
 
-    test(`vertical: true`, () => {
+    test('vertical: true', () => {
       const result = parseDirection({ vertical: true })
 
       expect(result.hasDirection).toBe(true)

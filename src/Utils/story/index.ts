@@ -2,24 +2,24 @@
 
 import path from 'path'
 
-const story = (title: string, component: any, parameters?: any) => {
+const story = (title: string, component: any, parameters?: any): any => {
   const formattedTitle = path
     .normalize(title)
     .replace(path.normalize('src/'), '')
 
   return {
     title: formattedTitle,
-    ...( component && { component }),
-    ...( parameters && { parameters })
+    ...(typeof component !== 'undefined' && { component }),
+    ...(typeof parameters !== 'undefined' && { parameters })
   }
 }
 
-type StoryFunction = {
+interface StoryFunction {
   (): any
   storyName?: string
 }
 
-type StoryOf = {
+interface StoryOf {
   (story: StoryFunction): StoryFunction
   (name: string, story: StoryFunction): StoryFunction
 }

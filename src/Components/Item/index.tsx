@@ -1,48 +1,47 @@
-/** @jsxImportSource @emotion/react */
+import React from 'react'
 
 // -----------------------------------------------------------------------------
 
 import {
   TitleProp,
   StylingProps,
-  ChildrenProps,
+  ChildrenProps
 } from '@Props'
 
 // -----------------------------------------------------------------------------
 
 import {
   parseTitle,
-  className,
+  className
 } from '@Utils'
 
 // -----------------------------------------------------------------------------
 
-const titleStyle = {
-  marginBottom: '1.25em',
-  textAlign: 'center',
-
-  color: 'black',
-  fontWeight: '600',
-}
+// import { styles } from './styles'
 
 // -----------------------------------------------------------------------------
 
-import { styles } from './styles'
+// const titleStyle = {
+//   marginBottom: '1.25em',
+//   textAlign: 'center',
+
+//   color: 'black',
+//   fontWeight: '600'
+// }
 
 // -----------------------------------------------------------------------------
 
 export interface Props extends
   TitleProp,
   StylingProps,
-  ChildrenProps
-{
+  ChildrenProps {
   debug?: any
 }
 
-export const Item = (props: Props) => {
+export const Item = (props: Props): JSX.Element => {
   const {
     hasTitle,
-    title,
+    title
   } = parseTitle(props)
 
   return (
@@ -52,13 +51,13 @@ export const Item = (props: Props) => {
         'story-item',
         'container',
         props.class,
-        props.className,
+        props.className
       ])}
-      css={[
-        styles,
-        props.debug && { outline: '1px dotted red' },
-        props.style,
-      ]}
+      // css={[
+      //   styles,
+      //   props.debug && { outline: '1px dotted red' },
+      //   props.style,
+      // ]}
     >
       {/* ------------------------------------------------------------------ */}
       {hasTitle && (
@@ -66,7 +65,7 @@ export const Item = (props: Props) => {
           className={className([
             'storyset',
             'story-item',
-            'title',
+            'title'
           ])}
         >
           {title}
@@ -78,7 +77,7 @@ export const Item = (props: Props) => {
         className={className([
           'storyset',
           'story-item',
-          'children',
+          'children'
         ])}
       >
         {props.children}

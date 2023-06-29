@@ -9,55 +9,55 @@ export default story(
   { ...showDocs() }
 )
 
-export const Default = () => (
+export const Default = (): JSX.Element => (
   <Story debug>
-    <Component index={1}/>
-    <Component index={2}/>
-    <Component index={3}/>
+    <Component index={1} />
+    <Component index={2} />
+    <Component index={3} />
   </Story>
 )
 
-export const Align = () => (
+export const Align = (): JSX.Element => (
   <List>
     <Story
       left
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Story>
 
     <Story
       center
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Story>
 
     <Story
       right
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Story>
   </List>
 )
 
-export const Direction = () => (
+export const Direction = (): JSX.Element => (
   <List>
     <Story
       left
       horizontal
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Story>
 
     <Story
@@ -65,14 +65,14 @@ export const Direction = () => (
       vertical
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Story>
   </List>
 )
 
-export const Spacing = () => (
+export const Spacing = (): JSX.Element => (
   <List>
     <Story
       left
@@ -80,9 +80,9 @@ export const Spacing = () => (
       spacing={{ between: '75px' }}
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Story>
 
     <Story
@@ -91,9 +91,9 @@ export const Spacing = () => (
       spacing={{ between: '25px' }}
       debug
     >
-      <Component index={1}/>
-      <Component index={2}/>
-      <Component index={3}/>
+      <Component index={1} />
+      <Component index={2} />
+      <Component index={3} />
     </Story>
   </List>
 )

@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+import React from 'react'
 
 // -----------------------------------------------------------------------------
 
@@ -8,24 +8,24 @@ import {
   AlignProps,
   DirectionProps,
   SpacingProp,
-  ChildrenProps,
+  ChildrenProps
 } from '@Props'
 
 // -----------------------------------------------------------------------------
 
 import {
   parseTitle,
-  parseAlign,
-  parseDirection,
-  parseSpacing,
+  // parseAlign,
+  // parseDirection,
+  // parseSpacing,
   processChildren,
-  getDefaults,
-  className,
+  // getDefaults,
+  className
 } from '@Utils'
 
 // -----------------------------------------------------------------------------
 
-import { styles } from './styles'
+// import { styles } from './styles'
 
 // -----------------------------------------------------------------------------
 
@@ -35,51 +35,51 @@ export interface Props extends
   AlignProps,
   DirectionProps,
   SpacingProp,
-  ChildrenProps
-{
+  ChildrenProps {
+
   debug?: any
 }
 
 // -----------------------------------------------------------------------------
 
-export const Group = (props: Props) => {
-  const defaults = getDefaults().Group
+export const Group = (props: Props): JSX.Element => {
+  // const defaults = getDefaults().Group
 
   const {
     hasTitle,
-    title,
+    title
   } = parseTitle(props)
 
-  const {
-    hasAlign,
-    align,
-  } = parseAlign(props, defaults.align)
+  // const {
+  //   hasAlign,
+  //   align,
+  // } = parseAlign(props, defaults.align)
 
-  const {
-    hasDirection,
-    isHorizontal,
-    isVertical,
-    direction,
-  } = parseDirection(props, defaults.direction)
+  // const {
+  //   hasDirection,
+  //   isHorizontal,
+  //   isVertical,
+  //   direction,
+  // } = parseDirection(props, defaults.direction)
 
-  const {
-    hasTop,
-    hasBottom,
-    hasLeft,
-    hasRight,
-    hasBetween,
+  // const {
+  //   hasTop,
+  //   hasBottom,
+  //   hasLeft,
+  //   hasRight,
+  //   hasBetween,
 
-    top,
-    bottom,
-    left,
-    right,
-    between,
-  } = parseSpacing(props, defaults.spacing)
+  //   top,
+  //   bottom,
+  //   left,
+  //   right,
+  //   between,
+  // } = parseSpacing(props, defaults.spacing)
 
   const {
     numChildren,
     firstChild,
-    children,
+    children
   } = processChildren(props)
 
   return (
@@ -89,20 +89,20 @@ export const Group = (props: Props) => {
         'story-group',
         'container',
         props.class,
-        props.className,
+        props.className
       ])}
-      css={[
-        styles,
-        hasAlign && { justifyContent: align },
-        props.debug && { outline: '1px dotted red' },
-        props.style,
-      ]}
+      // css={[
+      //   styles,
+      //   hasAlign && { justifyContent: align },
+      //   props.debug && { outline: '1px dotted red' },
+      //   props.style,
+      // ]}
     >
       <div
         className={className([
           'storyset',
           'story-group',
-          'wrapper',
+          'wrapper'
         ])}
       >
         {/* ------------------------------------------------------------------ */}
@@ -111,7 +111,7 @@ export const Group = (props: Props) => {
             className={className([
               'storyset',
               'story-group',
-              'title',
+              'title'
             ])}
           >
             {title}
@@ -127,11 +127,11 @@ export const Group = (props: Props) => {
                 className={className([
                   'storyset',
                   'story-group',
-                  'list',
+                  'list'
                 ])}
-                css={[
-                  hasDirection && { flexDirection: direction as any },
-                ]}
+                // css={[
+                //   hasDirection && { flexDirection: direction as any },
+                // ]}
               >
                 {children.map(
                   (child, index) => (
@@ -140,22 +140,22 @@ export const Group = (props: Props) => {
                       className={className([
                         'storyset',
                         'story-group',
-                        'item',
+                        'item'
                       ])}
-                      css={[
-                        hasBetween && {
-                          '& + &': isVertical
-                            ? { marginTop:  between }
-                            : { marginLeft: between },
-                        },
-                      ]}
+                      // css={[
+                      //   hasBetween && {
+                      //     '& + &': isVertical
+                      //       ? { marginTop:  between }
+                      //       : { marginLeft: between },
+                      //   },
+                      // ]}
                     >
                       {child}
                     </li>
                   )
                 )}
               </ul>
-            )
+              )
             // ---------------------------------------------------------------
             : firstChild
           }

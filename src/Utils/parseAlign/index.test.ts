@@ -9,21 +9,21 @@ describe('parseAlign', () => {
   })
 
   describe('align prop', () => {
-    test(`align: "left"`, () => {
+    test('align: "left"', () => {
       const result = parseAlign({ align: 'left' })
 
       expect(result.hasAlign).toBe(true)
       expect(result.align).toBe('left')
     })
 
-    test(`align: "center"`, () => {
+    test('align: "center"', () => {
       const result = parseAlign({ align: 'center' })
 
       expect(result.hasAlign).toBe(true)
       expect(result.align).toBe('center')
     })
 
-    test(`align: "right"`, () => {
+    test('align: "right"', () => {
       const result = parseAlign({ align: 'right' })
 
       expect(result.hasAlign).toBe(true)
@@ -32,21 +32,21 @@ describe('parseAlign', () => {
   })
 
   describe('directions as props', () => {
-    test(`left: true`, () => {
+    test('left: true', () => {
       const result = parseAlign({ left: true })
 
       expect(result.hasAlign).toBe(true)
       expect(result.align).toBe('left')
     })
 
-    test(`center: true`, () => {
+    test('center: true', () => {
       const result = parseAlign({ center: true })
 
       expect(result.hasAlign).toBe(true)
       expect(result.align).toBe('center')
     })
 
-    test(`right: true`, () => {
+    test('right: true', () => {
       const result = parseAlign({ right: true })
 
       expect(result.hasAlign).toBe(true)

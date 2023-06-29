@@ -1,17 +1,20 @@
 /**
  * @internal
  */
-export const parseTitle = (props?: any) => {
+export const parseTitle = (props?: any): {
+  hasTitle: boolean
+  title: string
+} => {
   let hasTitle = false
-  let title    = ''
+  let title = ''
 
   if (typeof props?.title === 'string') {
     hasTitle = true
-    title    = props.title
+    title = props.title
   }
 
   return {
     hasTitle,
-    title,
+    title
   }
 }

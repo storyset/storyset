@@ -2,7 +2,7 @@
  * @default 'center'
  */
 export type TAlign =
-    'left'
+  'left'
   | 'center'
   | 'right'
 
@@ -11,21 +11,21 @@ export type TAlign =
  */
 export type TDirection =
     'horizontal'
-  | 'vertical'
+    | 'vertical'
 
 export type TSpacing =
     number
-  | string
-  | {
-    of?:         number | string
+    | string
+    | {
+      of?: number | string
 
-    top?:        number | string
-    bottom?:     number | string
-    left?:       number | string
-    right?:      number | string
+      top?: number | string
+      bottom?: number | string
+      left?: number | string
+      right?: number | string
 
-    vertical?:   number | string
-    horizontal?: number | string
+      vertical?: number | string
+      horizontal?: number | string
 
-    between?:    number | string
-  }
+      between?: number | string
+    }

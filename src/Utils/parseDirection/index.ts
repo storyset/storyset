@@ -1,10 +1,15 @@
 /**
  * @internal
  */
-export const parseDirection = (props?: any, defaultDirection?: string) => {
+export const parseDirection = (props?: any, defaultDirection?: string): {
+  hasDirection: boolean
+  isHorizontal: boolean
+  isVertical: boolean
+  direction: string
+} => {
   let direction = defaultDirection ?? ''
 
-  if (props?.direction) {
+  if (typeof props?.direction === 'string') {
     switch (props?.direction) {
       case 'horizontal':
       case 'vertical':
@@ -13,24 +18,23 @@ export const parseDirection = (props?: any, defaultDirection?: string) => {
   } else {
     if (props?.horizontal === true) {
       direction = 'horizontal'
-
     } else if (props?.vertical === true) {
       direction = 'vertical'
     }
   }
 
   let isHorizontal = false
-  let isVertical   = false
+  let isVertical = false
 
   switch (direction) {
     case 'horizontal':
       isHorizontal = true
-      direction    = 'row'
+      direction = 'row'
       break
 
     case 'vertical':
       isVertical = true
-      direction  = 'column'
+      direction = 'column'
       break
   }
 
@@ -38,6 +42,6 @@ export const parseDirection = (props?: any, defaultDirection?: string) => {
     hasDirection: direction !== '',
     isHorizontal,
     isVertical,
-    direction,
+    direction
   }
 }

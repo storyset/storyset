@@ -8,13 +8,13 @@ export const fontFamily = [
   '"Helvetica Neue"',
   'Helvetica',
   'Arial',
-  'sans-serif',
+  'sans-serif'
 ].join(',')
 
 export const font = {
   color: '#333',
-  fontSize:   '13px',
+  fontSize: '13px',
   fontWeight: 'bold',
 
-  fontFamily: fontFamily,
+  fontFamily
 }

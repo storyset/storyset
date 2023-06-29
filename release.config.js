@@ -5,15 +5,15 @@ module.exports = {
     '@semantic-release/changelog',
     '@semantic-release/github',
     ['@semantic-release/exec', {
-      prepareCmd: 'npm run build',
+      prepareCmd: 'npm run build'
     }],
     ['@semantic-release/git', {
       assets: [
-        'CHANGELOG*',
-      ],
+        'CHANGELOG*'
+      ]
     }],
     ['@semantic-release/npm', {
-      pkgRoot: '.dist',
-    }],
-  ],
+      pkgRoot: 'dist'
+    }]
+  ]
 }

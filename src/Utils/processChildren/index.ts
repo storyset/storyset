@@ -1,15 +1,14 @@
 import {
   type ReactNode,
-  isValidElement,
+  isValidElement
 } from 'react'
 
 const _processChild = (child: any): any => {
-  if (child) {
+  if (typeof child !== 'undefined') {
     if (Array.isArray(child)) {
       return child.map(
         child => _processChild(child)
       )
-
     } else if (typeof child === 'object') {
       if (isValidElement(child)) {
         return child
@@ -23,17 +22,22 @@ const _processChild = (child: any): any => {
 /**
  * @internal
  */
-export const processChildren = (props: any) => {
+export const processChildren = (props: any): {
+  hasChildren: boolean
+  numChildren: number
+  firstChild: ReactNode
+  children: ReactNode[]
+} => {
   const children = props.children ?? props.of
 
-  let processedChildren: ReactNode[] =
+  const processedChildren: ReactNode[] =
     [_processChild(children)]
       .flat(10)
       .filter(child => child !== null)
 
-  if (!processedChildren) {
-    processedChildren = []
-  }
+  // if (!processedChildren) {
+  //   processedChildren = []
+  // }
 
   return {
     hasChildren: processedChildren.length > 0,
@@ -43,6 +47,6 @@ export const processChildren = (props: any) => {
       ? processedChildren[0]
       : null,
 
-    children: processedChildren,
+    children: processedChildren
   }
 }

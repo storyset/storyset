@@ -1,32 +1,42 @@
 import { TSpacing } from '@Types'
 
-const _parseSpacing = (spacing: any) => {
-  let hasTop     = false
-  let hasBottom  = false
-  let hasLeft    = false
-  let hasRight   = false
+const _parseSpacing = (spacing: any): {
+  hasTop: boolean
+  hasBottom: boolean
+  hasLeft: boolean
+  hasRight: boolean
+  hasBetween: boolean
+  top: string | number
+  bottom: string | number
+  left: string | number
+  right: string | number
+  between: string | number
+} => {
+  let hasTop = false
+  let hasBottom = false
+  let hasLeft = false
+  let hasRight = false
   let hasBetween = false
 
-  let top:     number | string = 0
-  let bottom:  number | string = 0
-  let left:    number | string = 0
-  let right:   number | string = 0
+  let top: number | string = 0
+  let bottom: number | string = 0
+  let left: number | string = 0
+  let right: number | string = 0
   let between: number | string = 0
 
   if (typeof spacing === 'number' || typeof spacing === 'string') {
-    hasTop     =
-    hasBottom  =
-    hasLeft    =
-    hasRight   =
+    hasTop =
+    hasBottom =
+    hasLeft =
+    hasRight =
     hasBetween = true
 
-    top     =
-    bottom  =
-    left    =
-    right   =
+    top =
+    bottom =
+    left =
+    right =
     between = spacing
-
-  } else if (typeof spacing === 'object' && spacing) {
+  } else if (typeof spacing === 'object' && spacing !== null) {
     for (const key of Object.keys(spacing)) {
       const value = spacing[key]
 
@@ -34,43 +44,43 @@ const _parseSpacing = (spacing: any) => {
         switch (key) {
           case 'top':
             hasTop = true
-            top    = value
+            top = value
             break
 
           case 'bottom':
             hasBottom = true
-            bottom    = value
+            bottom = value
             break
 
           case 'left':
             hasLeft = true
-            left    = value
+            left = value
             break
 
           case 'right':
             hasRight = true
-            right    = value
+            right = value
             break
 
-         case 'vertical':
-            hasTop    =
+          case 'vertical':
+            hasTop =
             hasBottom = true
 
-            top    =
+            top =
             bottom = value
             break
 
           case 'horizontal':
-            hasLeft  =
+            hasLeft =
             hasRight = true
 
-            left  =
+            left =
             right = value
             break
 
           case 'between':
             hasBetween = true
-            between    = value
+            between = value
             break
         }
       }
@@ -88,52 +98,63 @@ const _parseSpacing = (spacing: any) => {
     bottom,
     left,
     right,
-    between,
+    between
   }
 }
 
-export const parseSpacing = (props: any, defaultSpacing?: TSpacing) => {
-  let hasTop     = false
-  let hasBottom  = false
-  let hasLeft    = false
-  let hasRight   = false
+export const parseSpacing = (props: any, defaultSpacing?: TSpacing): {
+  hasTop: boolean
+  hasBottom: boolean
+  hasLeft: boolean
+  hasRight: boolean
+  hasBetween: boolean
+  top: string | number
+  bottom: string | number
+  left: string | number
+  right: string | number
+  between: string | number
+} => {
+  let hasTop = false
+  let hasBottom = false
+  let hasLeft = false
+  let hasRight = false
   let hasBetween = false
 
-  let top:     number | string = 0
-  let bottom:  number | string = 0
-  let left:    number | string = 0
-  let right:   number | string = 0
+  let top: number | string = 0
+  let bottom: number | string = 0
+  let left: number | string = 0
+  let right: number | string = 0
   let between: number | string = 0
 
-  if (typeof defaultSpacing !== undefined) {
+  if (typeof defaultSpacing !== 'undefined') {
     const spacing = _parseSpacing(defaultSpacing)
 
-    hasTop     = spacing.hasTop
-    hasBottom  = spacing.hasBottom
-    hasLeft    = spacing.hasLeft
-    hasRight   = spacing.hasRight
+    hasTop = spacing.hasTop
+    hasBottom = spacing.hasBottom
+    hasLeft = spacing.hasLeft
+    hasRight = spacing.hasRight
     hasBetween = spacing.hasBetween
 
-    top     = spacing.top
-    bottom  = spacing.bottom
-    left    = spacing.left
-    right   = spacing.right
+    top = spacing.top
+    bottom = spacing.bottom
+    left = spacing.left
+    right = spacing.right
     between = spacing.between
   }
 
   if ('spacing' in props) {
     const spacing = _parseSpacing(props.spacing)
 
-    hasTop     = spacing.hasTop
-    hasBottom  = spacing.hasBottom
-    hasLeft    = spacing.hasLeft
-    hasRight   = spacing.hasRight
+    hasTop = spacing.hasTop
+    hasBottom = spacing.hasBottom
+    hasLeft = spacing.hasLeft
+    hasRight = spacing.hasRight
     hasBetween = spacing.hasBetween
 
-    top     = spacing.top
-    bottom  = spacing.bottom
-    left    = spacing.left
-    right   = spacing.right
+    top = spacing.top
+    bottom = spacing.bottom
+    left = spacing.left
+    right = spacing.right
     between = spacing.between
   }
 
@@ -148,6 +169,6 @@ export const parseSpacing = (props: any, defaultSpacing?: TSpacing) => {
     bottom,
     left,
     right,
-    between,
+    between
   }
 }

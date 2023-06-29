@@ -1,10 +1,16 @@
 /**
  * @internal
  */
-export const parseAlign = (props?: any, defaultAlign?: string) => {
+export const parseAlign = (
+  props?: any,
+  defaultAlign?: string
+): {
+  hasAlign: boolean
+  align: string
+} => {
   let align = defaultAlign ?? ''
 
-  if (props?.align) {
+  if (typeof props?.align === 'string') {
     switch (props.align) {
       case 'left':
       case 'center':
@@ -14,10 +20,8 @@ export const parseAlign = (props?: any, defaultAlign?: string) => {
   } else {
     if (props?.left === true) {
       align = 'left'
-
     } else if (props?.center === true) {
       align = 'center'
-
     } else if (props?.right === true) {
       align = 'right'
     }
@@ -25,6 +29,6 @@ export const parseAlign = (props?: any, defaultAlign?: string) => {
 
   return {
     hasAlign: align !== '',
-    align,
+    align
   }
 }

@@ -9,15 +9,15 @@ module.exports = {
   testTimeout: 30000,
 
   moduleDirectories: [
-    'node_modules',
+    'node_modules'
   ],
 
   moduleNameMapper: {
     ...pathsToModuleNameMapper(
       compilerOptions.paths,
       {
-        prefix: `<rootDir>/${compilerOptions.baseUrl}`,
+        prefix: `<rootDir>/${compilerOptions.baseUrl}`
       }
-    ),
+    )
   }
 }

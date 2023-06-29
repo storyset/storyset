@@ -62,6 +62,9 @@ typings/
 .temp
 
 # release-related directories
+build
+deploy
+dist
 .build
 .deploy
 .dist

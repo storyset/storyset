@@ -20,14 +20,6 @@
   },
 
   "compilerOptions": {
-    "sourceMap": true,
-    "declaration": true,
-    "noEmit": false,
-
-    "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
-
-    "outDir": ".dist",
     "baseUrl": "src",
 
     "paths": {

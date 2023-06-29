@@ -1,13 +1,13 @@
 import {
   type TAlign,
   type TDirection,
-  type TSpacing,
+  type TSpacing
 } from '../Types'
 
 export interface StylingProps {
-  class?:     any
+  class?: any
   className?: any
-  style?:     any
+  style?: any
 }
 
 export interface TitleProp {
@@ -15,16 +15,16 @@ export interface TitleProp {
 }
 
 export interface AlignProps {
-  align?:  TAlign
-  left?:   boolean
+  align?: TAlign
+  left?: boolean
   center?: boolean
-  right?:  boolean
+  right?: boolean
 }
 
 export interface DirectionProps {
-  direction?:  TDirection
+  direction?: TDirection
   horizontal?: boolean
-  vertical?:   boolean
+  vertical?: boolean
 }
 
 export interface SpacingProp {
@@ -32,6 +32,6 @@ export interface SpacingProp {
 }
 
 export interface ChildrenProps {
-  of?:       any
+  of?: any
   children?: any
 }

@@ -9,12 +9,11 @@ export default story(
   { ...showDocs() }
 )
 
-
-export const Default = () => (
+export const Default = (): JSX.Element => (
   <Item
     title='Item'
     debug
   >
-    <Component/>
+    <Component />
   </Item>
 )

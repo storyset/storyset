@@ -27,13 +27,13 @@ export const styles = [
 
       ...font,
 
-      fontSize: '12px',
+      fontSize: '12px'
     },
 
     '& .story-item.children': {
-      display: 'flex',
+      display: 'flex'
       // width:   '100%',
       // height:  '100%',
     }
-  },
+  }
 ]
