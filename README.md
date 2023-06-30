@@ -1,13 +1,14 @@
-# @storyset/storyset
+# storyset
 
-Useful tools for Storybook.
+A set of useful tools for [Storybook][url-storybook].
 
 ## License
 
-[ISC][url-license] @ [richrdkng][url-website]
+[MIT][url-license] @ [richrdkng][url-website]
 
 <!--- References =========================================================== -->
 
 <!--- URLs -->
+[url-storybook]: https://storybook.js.org/
+[url-license]: https://github.com/storyset/storyset/blob/main/LICENSE
 [url-website]: https://www.richrdkng.com
-[url-license]: https://github.com/storyset/storyset/blob/master/LICENSE.md
