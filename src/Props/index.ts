@@ -5,7 +5,6 @@ import {
 } from '../Types'
 
 export interface StylingProps {
-  class?: any
   className?: any
   style?: any
 }
