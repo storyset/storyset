@@ -63,16 +63,7 @@ export const Story = (props: Props): JSX.Element => {
   } = parseDirection(props, defaults.direction)
 
   const {
-    hasTop,
-    hasBottom,
-    hasLeft,
-    hasRight,
     hasBetween,
-
-    top,
-    bottom,
-    left,
-    right,
     between
   } = parseSpacing(props, defaults.spacing)
 

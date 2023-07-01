@@ -88,7 +88,6 @@ export const Group = (props: Props): JSX.Element => {
         'storyset',
         'story-group',
         'container',
-        props.class,
         props.className
       ])}
       // css={[

@@ -50,7 +50,6 @@ export const Item = (props: Props): JSX.Element => {
         'storyset',
         'story-item',
         'container',
-        props.class,
         props.className
       ])}
       // css={[
