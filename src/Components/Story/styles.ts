@@ -1,29 +1,31 @@
-export const styles = [
-  {
-    display: 'flex',
-    width: '100%',
-    height: '100%',
+import { type CSSProperties } from 'react'
 
-    '& .story.wrapper': {
-      display: 'flex',
+export const container: CSSProperties = {
+  display: 'flex',
 
-      alignItems: 'left',
-      justifyContent: 'center',
-      flexDirection: 'column'
-    },
+  width: '100%',
+  height: '100%'
+}
 
-    '& .story.list': {
-      listStyle: 'none',
+export const wrapper: CSSProperties = {
+  display: 'flex',
 
-      display: 'flex',
+  flexDirection: 'column',
 
-      margin: 0,
-      padding: 0
-    },
+  alignItems: 'left',
+  justifyContent: 'center'
+}
 
-    '& .story.item': {
-      display: 'flex',
-      alignItems: 'center'
-    }
-  }
-]
+export const list: CSSProperties = {
+  listStyle: 'none',
+
+  display: 'flex',
+
+  margin: 0,
+  padding: 0
+}
+
+export const listItem: CSSProperties = {
+  display: 'flex',
+  alignItems: 'center'
+}

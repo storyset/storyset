@@ -1,8 +1,6 @@
 // TODO: handle arrays as children (<Story>{[ ... ]}<Story/>) - error out before processing children
 // TODO: auto key array of elements similar to List to ignore keys during maps
 
-import { Fragment } from 'react'
-
 // -----------------------------------------------------------------------------
 
 import {
@@ -16,17 +14,18 @@ import {
 // -----------------------------------------------------------------------------
 
 import {
-  // parseAlign,
-  // parseDirection,
-  // parseSpacing,
+  getDefaults,
+  parseAlign,
+  parseDebug,
+  parseDirection,
+  parseSpacing,
   processChildren,
-  // getDefaults,
   className
 } from '@Utils'
 
 // -----------------------------------------------------------------------------
 
-// import { styles } from './styles'
+import * as styles from './styles'
 
 // -----------------------------------------------------------------------------
 
@@ -36,10 +35,9 @@ export interface Props extends
   DirectionProps,
   SpacingProp,
   ChildrenProps {
+
   globalStyles?: any
-
   stretch?: boolean
-
   background?: string
   checkerboard?: boolean
 
@@ -47,35 +45,36 @@ export interface Props extends
 }
 
 export const Story = (props: Props): JSX.Element => {
-  // const defaults = getDefaults().Story
+  const defaults = getDefaults().Story
 
   // const globalStyles = props.globalStyles ?? defaults.globalStyles
 
-  // const {
-  //   hasAlign,
-  //   align
-  // } = parseAlign(props, defaults.align)
+  const { hasDebug } = parseDebug(props)
 
-  // const {
-  //   hasDirection,
-  //   isHorizontal,
-  //   isVertical,
-  //   direction
-  // } = parseDirection(props, defaults.direction)
+  const {
+    hasAlign,
+    align
+  } = parseAlign(props, defaults.align)
 
-  // const {
-  //   hasTop,
-  //   hasBottom,
-  //   hasLeft,
-  //   hasRight,
-  //   hasBetween,
+  const {
+    hasDirection,
+    isVertical,
+    direction
+  } = parseDirection(props, defaults.direction)
 
-  //   top,
-  //   bottom,
-  //   left,
-  //   right,
-  //   between
-  // } = parseSpacing(props, defaults.spacing)
+  const {
+    hasTop,
+    hasBottom,
+    hasLeft,
+    hasRight,
+    hasBetween,
+
+    top,
+    bottom,
+    left,
+    right,
+    between
+  } = parseSpacing(props, defaults.spacing)
 
   const {
     numChildren,
@@ -84,72 +83,72 @@ export const Story = (props: Props): JSX.Element => {
   } = processChildren(props)
 
   return (
-    <>
-      {/* {globalStyles && <Global styles={globalStyles} />} */}
+    <div
+      className={className([
+        'storyset',
+        'story-container',
+        props.className
+      ])}
+      style={{
+        ...styles.container,
+        ...(hasAlign && { justifyContent: align }),
+        ...(hasDebug && { outline: '1px dotted red' }),
+        ...props.style
+      }}
+    >
       <div
         className={className([
           'storyset',
-          'story',
-          'container',
-          props.class,
-          props.className
+          'story-wrapper'
         ])}
-        // css={[
-        //   styles,
-        //   hasAlign && { justifyContent: align },
-        //   props.debug && { outline: '1px dotted red' },
-        //   props.style,
-        // ]}
+        style={{
+          ...styles.wrapper
+        }}
       >
-        <div
-          className={className([
-            'storyset',
-            'story',
-            'wrapper'
-          ])}
-        >
-          {
-            numChildren > 1
-              // ---------------------------------------------------------------
-              ? (
-                <ul
-                  className={className([
-                    'storyset',
-                    'story',
-                    'list'
-                  ])}
-                  // css={[
-                  //   hasDirection && { flexDirection: direction as any },
-                  // ]}
-                >
-                  {children.map(
-                    (child, index) => (
+        {
+          numChildren > 1
+            // -----------------------------------------------------------------
+            ? (
+              <ul
+                className={className([
+                  'storyset',
+                  'story-list'
+                ])}
+                style={{
+                  ...styles.list,
+                  ...(hasDirection && { flexDirection: direction as any })
+                }}
+              >
+                {children.map(
+                  (child, index) => {
+                    return (
                       <li
                         key={index}
                         className={className([
                           'storyset',
-                          'story',
-                          'item'
+                          'story-list-item'
                         ])}
-                        // css={[
-                        //   hasBetween && {
-                        //     '& + &': isVertical
-                        //       ? { marginTop:  between }
-                        //       : { marginLeft: between },
-                        //   },
-                        // ]}
+                        style={{
+                          ...styles.listItem,
+                          ...(index > 0 && hasBetween && {
+                            ...(isVertical
+                              ? { marginTop: between }
+                              : { marginLeft: between }
+                            )
+                          })
+                        }}
                       >
                         {child}
                       </li>
                     )
-                  )}
-                </ul>
-                )
-              // ---------------------------------------------------------------
-              : firstChild
-          }
-        </div>
+                  }
+                )}
+              </ul>
+              )
+            // -----------------------------------------------------------------
+            : firstChild
+        }
       </div>
-    </>
+    </div>
   )
 }

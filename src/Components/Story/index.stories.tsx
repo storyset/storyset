@@ -10,7 +10,7 @@ export default story(
 )
 
 export const Default = (): JSX.Element => (
-  <Story debug>
+  <Story>
     <Component index={1} />
     <Component index={2} />
     <Component index={3} />
@@ -96,4 +96,12 @@ export const Spacing = (): JSX.Element => (
       <Component index={3} />
     </Story>
   </List>
+)
+
+export const Debug = (): JSX.Element => (
+  <Story debug>
+    <Component index={1} />
+    <Component index={2} />
+    <Component index={3} />
+  </Story>
 )
