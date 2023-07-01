@@ -23,10 +23,10 @@ module.exports = {
 
   webpackFinal: async config => {
     // Add __dirname and __filename support to stories -------------------------
-    config.node = {
-      __dirname:  true,
-      __filename: true
-    }
+    // config.node = {
+    //   __dirname:  true,
+    //   __filename: true
+    // }
 
     // Handle TypeScript path aliases ------------------------------------------
     config.resolve.plugins = [
