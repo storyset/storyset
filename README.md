@@ -2,6 +2,12 @@
 
 A set of useful tools for [Storybook][url-storybook].
 
+## 📦 Installation
+
+```
+npm i storyset -D
+```
+
 ## License
 
 [MIT][url-license] @ [richrdkng][url-website]
