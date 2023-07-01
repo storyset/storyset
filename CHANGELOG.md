@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/storyset/storyset/compare/v1.2.0...v1.3.0) (2023-07-01)
+
+
+### Features
+
+* add multiple story function overloads ([30106a4](https://github.com/storyset/storyset/commit/30106a4a1d3b6411cd892b25d394e2e14c5515fd))
+
 # [1.2.0](https://github.com/storyset/storyset/compare/v1.1.0...v1.2.0) (2023-07-01)
 
 
