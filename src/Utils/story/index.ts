@@ -1,16 +1,44 @@
 // TODO: add custom path handler (prefix, mutator, custom functions, etc)
 
-import path from 'path'
+import { isObject } from '@Utils'
 
-const story = (title: string, component: any, parameters?: any): any => {
-  const formattedTitle = path
-    .normalize(title)
-    .replace(path.normalize('src/'), '')
+function story (component: any): any
+function story (component: any, parameters?: any): any
+function story (title: string, component: any, parameters?: any): any
+
+function story (param1: any, param2?: any, param3?: any): any {
+  let title: any = null
+  let component: any = null
+  let parameters: any = null
+
+  if (typeof param1 !== 'undefined') {
+    if (typeof param1 === 'string') {
+      title = param1
+
+      if (typeof param2 !== 'undefined') {
+        component = param2
+      }
+
+      if (isObject(param3)) {
+        parameters = param3
+      }
+    } else {
+      component = param1
+
+      if (isObject(param2)) {
+        parameters = param2
+      }
+    }
+  }
+
+  if (component === null) {
+    throw new Error('A valid component must be passed.')
+  }
 
   return {
-    title: formattedTitle,
-    ...(typeof component !== 'undefined' && { component }),
-    ...(typeof parameters !== 'undefined' && { parameters })
+    ...(title !== null && { title }),
+    component,
+    ...(parameters !== null && { parameters })
   }
 }
 

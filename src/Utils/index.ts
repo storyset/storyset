@@ -6,3 +6,4 @@ export { parseTitle } from './parseTitle'
 export { processChildren } from './processChildren'
 
 export { getDefaults } from './defaults'
+export { isObject } from './isObject'
