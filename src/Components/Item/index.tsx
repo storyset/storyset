@@ -11,23 +11,14 @@ import {
 // -----------------------------------------------------------------------------
 
 import {
+  parseDebug,
   parseTitle,
   className
 } from '@Utils'
 
 // -----------------------------------------------------------------------------
 
-// import { styles } from './styles'
-
-// -----------------------------------------------------------------------------
-
-// const titleStyle = {
-//   marginBottom: '1.25em',
-//   textAlign: 'center',
-
-//   color: 'black',
-//   fontWeight: '600'
-// }
+import * as styles from './styles'
 
 // -----------------------------------------------------------------------------
 
@@ -35,10 +26,13 @@ export interface Props extends
   TitleProp,
   StylingProps,
   ChildrenProps {
+
   debug?: any
 }
 
 export const Item = (props: Props): JSX.Element => {
+  const { hasDebug } = parseDebug(props)
+
   const {
     hasTitle,
     title
@@ -48,24 +42,25 @@ export const Item = (props: Props): JSX.Element => {
     <div
       className={className([
         'storyset',
-        'story-item',
-        'container',
+        'story-item-container',
         props.className
       ])}
-      // css={[
-      //   styles,
-      //   props.debug && { outline: '1px dotted red' },
-      //   props.style,
-      // ]}
+      style={{
+        ...styles.container,
+        ...(hasDebug && { outline: '1px dotted red' }),
+        ...props.style
+      }}
     >
       {/* ------------------------------------------------------------------ */}
       {hasTitle && (
         <div
           className={className([
             'storyset',
-            'story-item',
-            'title'
+            'story-item-title'
           ])}
+          style={{
+            ...styles.title
+          }}
         >
           {title}
         </div>
@@ -75,9 +70,11 @@ export const Item = (props: Props): JSX.Element => {
       <div
         className={className([
           'storyset',
-          'story-item',
-          'children'
+          'story-item-children'
         ])}
+        style={{
+          ...styles.children
+        }}
       >
         {props.children}
       </div>

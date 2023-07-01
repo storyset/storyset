@@ -1,39 +1,25 @@
+import { type CSSProperties } from 'react'
 import { font } from '@Theme'
 
-export const styles = [
-  {
-    display: 'inline-flex',
-    flexDirection: 'column',
+export const container: CSSProperties = {
+  display: 'inline-flex',
+  flexDirection: 'column'
+}
 
-    // width:   '100%',
-    // height:  '100%',
+export const title: CSSProperties = {
+  display: 'flex',
 
-    // '& .story-group.wrapper': {
-    //   display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
-    //   alignItems:     'left',
-    //   justifyContent: 'center',
-    //   flexDirection:  'column',
-    // },
+  marginBottom: '12px',
+  // width: '100%',
 
-    '& .story-item.title': {
-      display: 'flex',
+  ...font,
 
-      alignItems: 'center',
-      justifyContent: 'center',
+  fontSize: '12px'
+}
 
-      marginBottom: '1.1em',
-      // width: '100%',
-
-      ...font,
-
-      fontSize: '12px'
-    },
-
-    '& .story-item.children': {
-      display: 'flex'
-      // width:   '100%',
-      // height:  '100%',
-    }
-  }
-]
+export const children: CSSProperties = {
+  display: 'flex'
+}
