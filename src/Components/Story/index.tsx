@@ -1,6 +1,8 @@
 // TODO: handle arrays as children (<Story>{[ ... ]}<Story/>) - error out before processing children
 // TODO: auto key array of elements similar to List to ignore keys during maps
 
+import className from '@reactory/class-name'
+
 // -----------------------------------------------------------------------------
 
 import {
@@ -19,8 +21,7 @@ import {
   parseDebug,
   parseDirection,
   parseSpacing,
-  processChildren,
-  className
+  processChildren
 } from '@Utils'
 
 // -----------------------------------------------------------------------------

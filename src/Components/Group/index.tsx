@@ -1,4 +1,5 @@
 import React from 'react'
+import className from '@reactory/class-name'
 
 // -----------------------------------------------------------------------------
 
@@ -18,9 +19,8 @@ import {
   // parseAlign,
   // parseDirection,
   // parseSpacing,
-  processChildren,
-  // getDefaults,
-  className
+  processChildren
+  // getDefaults
 } from '@Utils'
 
 // -----------------------------------------------------------------------------

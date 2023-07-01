@@ -1,4 +1,5 @@
 import React from 'react'
+import className from '@reactory/class-name'
 
 // -----------------------------------------------------------------------------
 
@@ -12,8 +13,7 @@ import {
 
 import {
   parseDebug,
-  parseTitle,
-  className
+  parseTitle
 } from '@Utils'
 
 // -----------------------------------------------------------------------------
