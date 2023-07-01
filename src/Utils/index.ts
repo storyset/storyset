@@ -1,6 +1,7 @@
 export { className } from './className'
 
 export { parseAlign } from './parseAlign'
+export { parseDebug } from './parseDebug'
 export { parseDirection } from './parseDirection'
 export { parseSpacing } from './parseSpacing'
 export { parseTitle } from './parseTitle'
