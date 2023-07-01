@@ -1,62 +1,69 @@
+import { type CSSProperties } from 'react'
 import { font } from '@Theme'
 
-export const styles = [
-  {
-    display: 'flex',
-    width: '100%',
-    height: '100%',
+export const container: CSSProperties = {
+  display: 'flex',
+  width: '100%',
+  height: '100%'
+}
 
-    '& .story-group.wrapper': {
-      display: 'flex',
+export const wrapper: CSSProperties = {
+  display: 'flex',
 
-      alignItems: 'left',
-      justifyContent: 'center',
-      flexDirection: 'column'
-    },
+  alignItems: 'left',
+  justifyContent: 'center',
+  flexDirection: 'column'
+}
 
-    '& .story-group.title': {
-      ...font,
+export const title: CSSProperties = {
+  ...font,
 
-      display: 'flex',
-      alignItems: 'center',
+  display: 'flex',
+  alignItems: 'center',
 
-      marginBottom: '1.1em',
-      width: '100%',
+  marginBottom: '1.1em',
+  width: '100%'
+}
 
-      '&:before, &:after': {
-        content: '""',
-        position: 'relative',
-        display: 'block',
-        flex: 1,
-        top: '.1em',
-        width: '100%',
-        height: '1px',
-        background: '#DDD'
-      },
+export const titleText: CSSProperties = {
+  ...font
+}
 
-      '&:before': {
-        marginRight: '.5em'
-        // backgroundImage: 'linear-gradient(to left, #DDD, #F2F2F2)',
-      },
+export const titleDecorLineLeft: CSSProperties = {
+  position: 'relative',
+  display: 'block',
+  flex: 1,
+  top: '.1em',
+  width: '100%',
+  height: '1px',
+  background: '#DDD',
+  // backgroundImage: 'linear-gradient(to left, #DDD, #F2F2F2)',
 
-      '&:after': {
-        marginLeft: '.5em'
-        // backgroundImage: 'linear-gradient(to right, #DDD, #F2F2F2)',
-      }
-    },
+  marginRight: '3px'
+}
+export const titleDecorLineRight: CSSProperties = {
+  position: 'relative',
+  display: 'block',
+  flex: 1,
+  top: '.1em',
+  width: '100%',
+  height: '1px',
+  background: '#DDD',
+  // backgroundImage: 'linear-gradient(to right, #DDD, #F2F2F2)',
 
-    '& .story-group.list': {
-      listStyle: 'none',
+  marginLeft: '3px'
+}
 
-      display: 'flex',
+export const list: CSSProperties = {
+  listStyle: 'none',
 
-      margin: 0,
-      padding: 0
-    },
+  display: 'flex',
 
-    '& .story-group.item': {
-      display: 'flex',
-      alignItems: 'center'
-    }
-  }
-]
+  margin: 0,
+  padding: 0
+}
+
+export const listItem: CSSProperties = {
+  display: 'flex',
+  alignItems: 'center'
+}

@@ -16,16 +16,17 @@ import {
 
 import {
   parseTitle,
-  // parseAlign,
-  // parseDirection,
-  // parseSpacing,
-  processChildren
-  // getDefaults
+  parseAlign,
+  parseDebug,
+  parseDirection,
+  parseSpacing,
+  processChildren,
+  getDefaults
 } from '@Utils'
 
 // -----------------------------------------------------------------------------
 
-// import { styles } from './styles'
+import * as styles from './styles'
 
 // -----------------------------------------------------------------------------
 
@@ -43,38 +44,30 @@ export interface Props extends
 // -----------------------------------------------------------------------------
 
 export const Group = (props: Props): JSX.Element => {
-  // const defaults = getDefaults().Group
+  const defaults = getDefaults().Group
+
+  const { hasDebug } = parseDebug(props)
 
   const {
     hasTitle,
     title
   } = parseTitle(props)
 
-  // const {
-  //   hasAlign,
-  //   align,
-  // } = parseAlign(props, defaults.align)
+  const {
+    hasAlign,
+    align
+  } = parseAlign(props, defaults.align)
 
-  // const {
-  //   hasDirection,
-  //   isHorizontal,
-  //   isVertical,
-  //   direction,
-  // } = parseDirection(props, defaults.direction)
+  const {
+    hasDirection,
+    isVertical,
+    direction
+  } = parseDirection(props, defaults.direction)
 
-  // const {
-  //   hasTop,
-  //   hasBottom,
-  //   hasLeft,
-  //   hasRight,
-  //   hasBetween,
-
-  //   top,
-  //   bottom,
-  //   left,
-  //   right,
-  //   between,
-  // } = parseSpacing(props, defaults.spacing)
+  const {
+    hasBetween,
+    between
+  } = parseSpacing(props, defaults.spacing)
 
   const {
     numChildren,
@@ -86,34 +79,41 @@ export const Group = (props: Props): JSX.Element => {
     <div
       className={className([
         'storyset',
-        'story-group',
-        'container',
+        'story-group-container',
         props.className
       ])}
-      // css={[
-      //   styles,
-      //   hasAlign && { justifyContent: align },
-      //   props.debug && { outline: '1px dotted red' },
-      //   props.style,
-      // ]}
+      style={{
+        ...styles.container,
+        ...(hasAlign && { justifyContent: align }),
+        ...(hasDebug && { outline: '1px dotted red' }),
+        ...props.style
+      }}
     >
       <div
         className={className([
           'storyset',
-          'story-group',
-          'wrapper'
+          'story-group-wrapper'
         ])}
+        style={styles.wrapper}
       >
         {/* ------------------------------------------------------------------ */}
         {hasTitle && (
           <div
             className={className([
               'storyset',
-              'story-group',
-              'title'
+              'story-group-title'
             ])}
+            style={styles.title}
           >
-            {title}
+            <i
+              role='presentation'
+              style={styles.titleDecorLineLeft}
+            />
+            <span style={styles.titleText}>{title}</span>
+            <i
+              role='presentation'
+              style={styles.titleDecorLineRight}
+            />
           </div>
         )}
 
@@ -125,12 +125,12 @@ export const Group = (props: Props): JSX.Element => {
               <ul
                 className={className([
                   'storyset',
-                  'story-group',
-                  'list'
+                  'story-group-list'
                 ])}
-                // css={[
-                //   hasDirection && { flexDirection: direction as any },
-                // ]}
+                style={{
+                  ...styles.list,
+                  ...(hasDirection && { flexDirection: direction as any })
+                }}
               >
                 {children.map(
                   (child, index) => (
@@ -138,16 +138,17 @@ export const Group = (props: Props): JSX.Element => {
                       key={index}
                       className={className([
                         'storyset',
-                        'story-group',
-                        'item'
+                        'story-group-list-item'
                       ])}
-                      // css={[
-                      //   hasBetween && {
-                      //     '& + &': isVertical
-                      //       ? { marginTop:  between }
-                      //       : { marginLeft: between },
-                      //   },
-                      // ]}
+                      style={{
+                        ...styles.listItem,
+                        ...(index > 0 && hasBetween && {
+                          ...(isVertical
+                            ? { marginTop: between }
+                            : { marginLeft: between }
+                          )
+                        })
+                      }}
                     >
                       {child}
                     </li>
