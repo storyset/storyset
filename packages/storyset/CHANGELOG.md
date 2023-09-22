@@ -1,3 +1,10 @@
+# [storyset-v1.3.0](https://github.com/storyset/storyset/compare/storyset-v1.2.0...storyset-v1.3.0) (2023-09-22)
+
+
+### Features
+
+* **storyset:** trigger release ([fb74713](https://github.com/storyset/storyset/commit/fb747131530b1502f918dba08f8bc89333a6829a))
+
 # [storyset-v1.2.0](https://github.com/storyset/storyset/compare/storyset-v1.1.0...storyset-v1.2.0) (2023-09-22)
 
 
