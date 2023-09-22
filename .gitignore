@@ -25,9 +25,24 @@ lib-cov
 coverage
 coverage.lcov
 
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
 # Dependency directories
-node_modules
-jspm_packages
+node_modules/
+jspm_packages/
+
+# Dependency files (Lerna recommendation)
+# packages/**/package-lock.json
 
 # TypeScript v1 declaration files
 typings/
@@ -44,6 +59,9 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
+# Yarn Integrity file
+.yarn-integrity
+
 # dotenv local environment file
 .env.local
 .env.test
@@ -51,20 +69,48 @@ typings/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
-# tsc incremental build files
-*.tsbuildinfo
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# Firebase cache
+.firebase/
 
 # IDE directories
 .vscode/
 
 # temporary files & directories
 ._*
-.temp
+.temp/
+.temp-*/
 
-# release-related directories
-build
-deploy
-dist
-.build
-.deploy
-.dist
+# imported files & directories
+imported
+
+# development directory
+/dev
+
+# Firebase hosting deploy directory
+/public
+
+# release and deploy directories
+build/
+deploy/
+dist/
+build-*/
+deploy-*/
+dist-*/
