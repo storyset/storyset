@@ -24,8 +24,8 @@ module.exports = {
         'CHANGELOG*'
       ]
     }],
-    // ['@semantic-release/npm', {
-    //   pkgRoot: 'dist'
-    // }]
+    ['@semantic-release/npm', {
+      pkgRoot: 'dist'
+    }]
   ]
 }
