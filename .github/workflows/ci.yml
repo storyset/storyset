@@ -24,7 +24,9 @@ jobs:
       fail-fast: false
       matrix:
         package: [
-          '@storyset/components'
+          '@storyset/components',
+          '@storyset/viewports',
+          'storyset'
         ]
 
     steps:
@@ -75,7 +77,9 @@ jobs:
       fail-fast: false
       matrix:
         package: [
-          '@storyset/components'
+          '@storyset/components',
+          '@storyset/viewports',
+          'storyset'
         ]
 
     steps:
@@ -119,7 +123,9 @@ jobs:
       fail-fast: false
       matrix:
         package: [
-          '@storyset/components'
+          '@storyset/components',
+          '@storyset/viewports',
+          'storyset'
         ]
 
     steps:
@@ -184,6 +190,14 @@ jobs:
       - name: '@storyset/components'
         if: ${{ !cancelled() }}
         run: bash scripts/release.sh @storyset/components
+
+      - name: '@storyset/viewports'
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh @storyset/viewports
+
+      - name: storyset
+        if: ${{ !cancelled() }}
+        run: bash scripts/release.sh storyset
 
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
