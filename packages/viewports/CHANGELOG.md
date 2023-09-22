@@ -1,3 +1,10 @@
+# [@storyset/viewports-v1.0.1](https://github.com/storyset/storyset/compare/@storyset/viewports-v1.0.0...@storyset/viewports-v1.0.1) (2023-09-22)
+
+
+### Bug Fixes
+
+* **viewports:** trigger release ([2f2f997](https://github.com/storyset/storyset/commit/2f2f997ce9b866606f9019221a52cbe13f862f35))
+
 # @storyset/viewports-v1.0.0 (2023-09-22)
 
 
